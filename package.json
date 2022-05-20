@@ -1,0 +1,27 @@
+{
+  "name": "server-template",
+  "version": "1.0.0",
+  "description": "Server template with Express, Edge, Puppeteer, Cron and TailwindCSS",
+  "main": "server.js",
+  "scripts": {
+    "start": "tw:build && node server.js",
+    "dev": "concurrently -k \"nodemon server.js\" \"npm:tw:dev\"",
+    "tw:build": "npx tailwindcss -i ./public/css/index.css -o ./public/css/output.css --watch",
+    "tw:dev": "npm run tw:build --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "edge.js": "^5.3.6",
+    "express": "^4.18.1",
+    "node-cron": "^3.0.0",
+    "puppeteer": "^14.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.0",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.16",
+    "tailwindcss": "^3.0.24"
+  }
+}
